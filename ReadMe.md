@@ -54,3 +54,7 @@ Ensure you have the following installed:
     ```
 
     
+## Registration (For Testing purposes)
+
+1. On the code verification page the correct OTP is `123456`
+2. On resending the verification code the correct OTP will be `654321`
