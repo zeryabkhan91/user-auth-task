@@ -6,7 +6,7 @@
 }
 
 .avatar {
-  width: 16rem;
+  width: 14rem;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
@@ -22,7 +22,13 @@
   margin-bottom: 20px;
 }
 
+.edit-button {
+  background-color: #ececec;
+  font-weight: 400;
+}
+
 .info-text {
+  text-align: start;
   display: flex;
   flex-direction: column;
 }
@@ -43,15 +49,19 @@
 }
 
 ::ng-deep .mat-mdc-card-header {
-  padding: 16px 16px !important;
+  padding: 16px 0 !important;
   border-bottom: solid 1px #e5e5e5;
 }
 
 .profile-details {
   display: flex;
-  padding: 5rem;
+  padding: 8rem 0;
   gap: 1rem;
   justify-content: center;
+}
+
+.avatar-card {
+  padding: 0;
 }
 
 @media (max-width: 767px) {
@@ -65,15 +75,42 @@
   }
   .avatar-card {
     align-items: center;
+    position: relative;
+    background: white;
+    // padding: 20px 20px 0px 20px;
+
   }
   .profile-details {
     padding: 2rem;
   }
   .edit-profile-container {
     justify-content: flex-end;
+    margin: 0 5px 30px 5px;
   }
   .edit-button {
-    background-color: #00000014 !important;
+    background-color: #1a78a7 !important;
     color: white !important;
+    border: solid 1px #ffffff;
+  }
+
+  .profile-container {
+    text-align: center;
+  }
+
+  .profile-header {
+    background-size: cover;
+    height: 200px;
+    position: relative;
+    margin-bottom: -160px;
+  }
+
+
+  .avatar {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
