@@ -1,0 +1,21 @@
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+mat-card {
+  padding: 20px;
+}
+
+mat-card-title {
+  margin-bottom: 20px;
+}
+
+mat-card-content {
+  margin-bottom: 20px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}

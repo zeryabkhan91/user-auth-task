@@ -90,7 +90,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  onAvatarSelected(event: Event): void {
+  public onAvatarSelected(event: Event): void {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (file) {
       // In a real app, we would upload this file to a server
@@ -104,7 +104,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     }
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     if (this.registrationForm.valid) {
       const userData: User = {
         ...this.registrationForm.value,

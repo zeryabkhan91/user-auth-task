@@ -64,7 +64,7 @@ export class VerificationComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  startTimer(): void {
+  private startTimer(): void {
     this.timerExpired = false;
     this.timeLeft = 120;
     this.updateTimerDisplay();
@@ -88,12 +88,12 @@ export class VerificationComponent implements OnInit, OnDestroy {
       });
   }
 
-  updateTimerDisplay(): void {
+  private updateTimerDisplay(): void {
     this.minutes = Math.floor(this.timeLeft / 60);
     this.seconds = this.timeLeft % 60;
   }
 
-  resendCode(): void {
+  public resendCode(): void {
     this.authService
       .resendVerificationCode()
       .pipe(takeUntil(this.destroy$))
@@ -103,7 +103,7 @@ export class VerificationComponent implements OnInit, OnDestroy {
       });
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     if (this.verificationForm.valid) {
       this.isVerifying = true;
       this.errorMessage = '';

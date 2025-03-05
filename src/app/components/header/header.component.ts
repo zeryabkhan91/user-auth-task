@@ -60,17 +60,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  logout(): void {
+  public logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
 
-  navigateTo(path: string, queryParams?: Params): void {
+  public navigateTo(path: string, queryParams?: Params): void {
     console.log(path);
     this.router.navigate([path], { queryParams });
   }
 
-  toggleSidenav(): void {
+  public toggleSidenav(): void {
     if (this.sidenav) {
       this.sidenav.toggle();
     }

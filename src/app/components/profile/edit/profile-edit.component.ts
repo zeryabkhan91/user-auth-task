@@ -86,7 +86,7 @@ export class ProfileEditDialogComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  onAvatarSelected(event: Event): void {
+  public onAvatarSelected(event: Event): void {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (file) {
       // In a real app, we would upload this file to a server
@@ -100,7 +100,7 @@ export class ProfileEditDialogComponent implements OnInit, OnDestroy {
     }
   }
 
-  onSave(): void {
+  public onSave(): void {
     if (this.editForm.valid) {
       const updatedUser: Partial<User> = {
         ...this.editForm.value,

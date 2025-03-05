@@ -66,7 +66,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  openEditDialog(): void {
+  public openEditDialog(): void {
     const dialogRef = this.dialog.open(ProfileEditDialogComponent, {
       width: '500px',
     });
@@ -87,7 +87,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
       });
   }
 
-  formatDate(date: Date | undefined): string {
+  public formatDate(date: Date | undefined): string {
     if (!date) return 'Not provided';
 
     const d = new Date(date);
