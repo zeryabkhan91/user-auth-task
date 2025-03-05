@@ -1,0 +1,45 @@
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+mat-card {
+  padding: 20px;
+}
+
+mat-card-title {
+  margin-bottom: 20px;
+}
+
+.avatar-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.avatar-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.avatar-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}

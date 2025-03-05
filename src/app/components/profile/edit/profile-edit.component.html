@@ -1,0 +1,87 @@
+<h2 mat-dialog-title>Edit Profile</h2>
+<mat-dialog-content>
+  <form [formGroup]="editForm">
+    <div class="avatar-upload">
+      <div>
+        <img
+          [src]="avatarPreview || 'assets/images/avatar.jpg'"
+          alt="Avatar Preview"
+          class="avatar-preview"
+        />
+      </div>
+      <button type="button" mat-raised-button (click)="avatarInput.click()">
+        <mat-icon>add_photo_alternate</mat-icon> Change Avatar
+      </button>
+      <input
+        #avatarInput
+        type="file"
+        accept="image/*"
+        (change)="onAvatarSelected($event)"
+        style="display: none"
+      />
+    </div>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        formControlName="username"
+        placeholder="Enter your username"
+      />
+      <mat-error *ngIf="editForm.get('username')?.hasError('required')">
+        Username is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthdate" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="editForm.get('birthdate')?.hasError('required')">
+        Birth date is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Country</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="country"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+          *ngFor="let country of filteredCountries | async"
+          [value]="country.name"
+        >
+          {{ country.name }}
+        </mat-option>
+      </mat-autocomplete>
+      <mat-error *ngIf="editForm.get('country')?.hasError('required')">
+        Country is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Website</mat-label>
+      <input
+        matInput
+        formControlName="website"
+        placeholder="Enter your website"
+      />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="editForm.invalid"
+    (click)="onSave()"
+  >
+    Save
+  </button>
+</mat-dialog-actions>

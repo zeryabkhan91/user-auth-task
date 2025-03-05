@@ -1,0 +1,37 @@
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+mat-card {
+  padding: 20px;
+}
+
+mat-card-title {
+  margin-bottom: 20px;
+}
+
+.verification-message {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.timer-container {
+  margin: 15px 0;
+  color: #555;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.error-message {
+  margin-top: 15px;
+  color: #f44336;
+}

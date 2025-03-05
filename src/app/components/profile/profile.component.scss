@@ -1,0 +1,79 @@
+.profile-header {
+  background: url('../../../assets/images/profile-bg.png');
+  height: 16rem;
+  position: absolute;
+  width: 100%;
+}
+
+.avatar {
+  width: 16rem;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+}
+.profile-container {
+  min-height: calc(100vh - 64px);
+}
+
+.edit-profile-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-family: 'Nunito Sans';
+  font-size: 16px;
+  font-weight: 400;
+  color: #7a7a7a;
+  margin-bottom: 0.5rem;
+}
+
+.info-value {
+  font-family: 'Nunito Sans';
+  font-size: 18px;
+  font-weight: 500;
+  color: #545454;
+}
+
+::ng-deep .mat-mdc-card-header {
+  padding: 16px 16px !important;
+  border-bottom: solid 1px #e5e5e5;
+}
+
+.profile-details {
+  display: flex;
+  padding: 5rem;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .profile-details {
+    flex-direction: column;
+    gap: 0;
+  }
+  .profile-card {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .avatar-card {
+    align-items: center;
+  }
+  .profile-details {
+    padding: 2rem;
+  }
+  .edit-profile-container {
+    justify-content: flex-end;
+  }
+  .edit-button {
+    background-color: #00000014 !important;
+    color: white !important;
+  }
+}
